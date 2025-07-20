@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Red & Black Loading Indicator</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh; /* Make sure it takes up full viewport height */
+            margin: 0;
+            background-color: #f0f0f0; /* A light background to see the dots clearly */
+            font-family: Arial, sans-serif;
+        }
+
+        .loading-indicator {
+            position: relative;
+            width: 24px; /* Adjust overall size as needed */
+            height: 24px;
+            /* Optional: Add a text label below the indicator */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .dot-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        .dot {
+            position: absolute;
+            width: 10px; /* Size of individual dots */
+            height: 10px;
+            border-radius: 50%;
+            animation: pulse 1.5s infinite ease-in-out;
+            transform-origin: center center; /* Ensure scaling is from the center */
+        }
+
+        .dot.red {
+            background-color: #FF0000; /* Red color */
+            left: 2px; /* Offset the red dot */
+            top: 7px; /* Adjust vertical position */
+            animation-delay: 0s; /* Start immediately */
+        }
+
+        .dot.black {
+            background-color: #000000; /* Black color */
+            right: 2px; /* Offset the black dot */
+            top: 7px; /* Adjust vertical position */
+            animation-delay: 0.75s; /* Delay for the second dot to create an alternating pulse */
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(0.6);
+                opacity: 0.7;
+            }
+            50% {
+                transform: scale(1.2);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(0.6);
+                opacity: 0.7;
+            }
+        }
+
+        .loading-text {
+            color: #555;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="loading-indicator">
+        <div class="dot-container">
+            <div class="dot red"></div>
+            <div class="dot black"></div>
+        </div>
+        <div class="loading-text">Loading...</div>
+    </div>
+
+</body>
+</html>
