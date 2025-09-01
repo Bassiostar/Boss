@@ -1,4 +1,0 @@
-Alice, Mathematicd
-Bob, Science
-Charlie, History
-Diana, Art
