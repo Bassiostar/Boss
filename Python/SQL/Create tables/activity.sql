@@ -1,0 +1,18 @@
+CREATE TABLE supplier(
+SNO TEXT PRIMARY KEY,
+SNAME TEXT,
+STATUS INTEGER,
+CITY TEXT
+);
+
+INSERT INTO supplier(SNO, SNAME, STATUS, CITY) VALUES
+("SS1", "Kelvin", 14, "ABA"),
+("SS2", "Bassey", 15, "LONDON"),
+("SS3", "Kalu", 17, "LAGOS");
+
+SELECT * FROM supplier;
+
+SELECT SNO FROM supplier;
+
+SELECT * FROM supplier
+WHERE STATUS>10;
